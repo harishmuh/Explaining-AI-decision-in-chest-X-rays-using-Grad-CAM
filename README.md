@@ -29,14 +29,14 @@ Deep learning models have achieved remarkable performance in medical image analy
 | 🐍 Framework | TensorFlow / Keras |
 
 
-## Study Workflow
+### Study Workflow
 
 
 <p align="center">
 <img src="https://github.com/harishmuh/AI-biomedical-research-and-disease-prediction/blob/main/Data/Multi-label%20Thoracic%20Diseases/Overall%20workflow.png?raw=true" width="90%">
 </p>
 
-## Dataset
+### Dataset
 
 This project utilizes the **NIH ChestX-ray14** dataset introduced by Wang et al. (2017). The complete dataset contains more than **100,000 frontal chest radiographs** collected from over **30,000 patients**, with each image annotated using up to **14 thoracic disease labels**. For this explainability study, a curated subset of **1,000 chest X-ray images** was used to enable efficient experimentation while preserving the multi-label characteristics of the original dataset.
 
@@ -53,37 +53,47 @@ This project utilizes the **NIH ChestX-ray14** dataset introduced by Wang et al.
 - NIH clinical center, US research hospital, ChestX-ray14 dataset: https://nihcc.app.box.com/v/ChestXray-NIHCC
 - Curated dataset used in this notebook: https://drive.google.com/file/d/1U23OnS30DkPxR4rPTXf2Msul7AJMc7A5/view
 
-## Results
+### Results
 
 The pretrained DenseNet121 model demonstrated discriminative capability across all fourteen thoracic disease categories. Performance was evaluated using Receiver Operating Characteristic (ROC) curves and the Area Under the Curve (AUC).
 
 <p align="center">
-<img src="figures/roc_curve.png" width="80%">
+<img src="Figures/ROC_curve.png" width="80%">
 </p>
 
-Subsequently, Grad-CAM was employed to visualize image regions contributing to the model's predictions, enabling qualitative investigation of model attention.
 
-## Grad-CAM Gallery
 
-### Single Disease Prediction
+### Grad-CAM Gallery
+
+Subsequently, Grad-CAM was employed to visualize image regions contributing to the model's predictions
+
+#### Single Disease Prediction
 
 <p align="center">
-<img src="figures/gradcam_single.png" width="95%">
+<img src="Figures/Cardiomegaly.png" width="95%">
 </p>
 
-Grad-CAM highlights the image regions that contribute most strongly to individual disease predictions, providing visual insight into the model's decision-making process.
+<p align="center">
+<img src="Figures/Edema.png" width="95%">
+</p>
+
+<p align="center">
+<img src="Figures/Nodule.png" width="95%">
+</p>
+
+In single disease prediction, Grad-CAM highlights the image regions that contribute the strongest to individual disease predictions.
 
 ---
 
-### Multi-label Disease Prediction
+#### Multi-label Disease Prediction
 
 <p align="center">
-<img src="figures/gradcam_multilabel.png" width="95%">
+<img src="Figures/multi_label_case_3.png" width="95%">
 </p>
 
 For multi-label chest X-ray images, Grad-CAM is generated independently for each predicted disease, illustrating how model attention shifts across different thoracic abnormalities within the same radiograph.
 
-## Requirements
+### Requirements
 - Python
 - TensorFlow
 - Keras
@@ -94,13 +104,16 @@ For multi-label chest X-ray images, Grad-CAM is generated independently for each
 - Scikit-learn
 - Google Colab
 
-## Acknowledgements
+### Acknowledgements
 
-The pretrained DenseNet121 model and pretrained weights used in this project were obtained from the **AI for Medicine Specialization** developed by **DeepLearning.AI**. This repository does not claim authorship of the pretrained model. Instead, the model is employed as a validated inference engine to investigate Explainable Artificial Intelligence using Grad-CAM. The contribution of this project includes workflow design, explainability analysis, implementation, and visualizations.
+The pretrained DenseNet121 model and pretrained weights used in this project were obtained from the **AI for Medicine Specialization** developed by **DeepLearning.AI**. This repository does not claim authorship of the pretrained model. Instead, the model is employed as a validated inference engine to investigate Explainable Artificial Intelligence using Grad-CAM. The contribution of this project includes workflow design,  model implementation, visualization, and explainability analysis.
 
-## References
+### References
 
 - Wang, X., et al. (2017). ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly Supervised Classification and Localization of Common Thorax Diseases.
 - Huang, G., et al. (2017). Densely Connected Convolutional Networks.
 - Selvaraju, R. R., et al. (2020). Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization.
 - Tjoa, E., & Guan, C. (2020). A Survey on Explainable Artificial Intelligence (XAI): Toward Medical XAI.
+
+### Assets
+* Research notebook → [Open notebook](https://colab.research.google.com/drive/1p_p3vt6jaUPM4GAREIWQJ9SGu0uhDFP6?usp=sharing) 
